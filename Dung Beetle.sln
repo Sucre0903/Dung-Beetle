@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 18
 VisualStudioVersion = 18.1.11312.151
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dung Beetle", "Sliding Simulation\Dung Beetle.csproj", "{FAAC8F20-5BE2-45A9-AE18-71D7598FA15B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Dung Beetle", "Dung Beetle\Dung Beetle.csproj", "{FAAC8F20-5BE2-45A9-AE18-71D7598FA15B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
