@@ -37,7 +37,7 @@ public class SmartPlanarUnionComponent : GH_Component
     new Guid("17e90e37-ffa5-4bd6-bc4c-9cfdcfc8145e");
 
   protected override Bitmap Icon =>
-    Dung_Beetle.Properties.Resources.Dung_Beetle_icon2;
+    Dung_Beetle.Properties.Resources.SmartPlanarUnionIcon;
 
   protected override void RegisterInputParams(
     GH_Component.GH_InputParamManager pManager)
