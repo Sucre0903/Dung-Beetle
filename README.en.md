@@ -32,8 +32,8 @@ Explore Dung Beetle through the accompanying Rhino model and Grasshopper definit
 
 **Download the example files:**
 
-- [Grasshopper definition (.gh)](Examples/DungBeetle%20Example%2001.gh)
-- [Rhino model (.3dm)](Examples/DungBeetle%20Example%2001.3dm)
+- [Grasshopper definition (.gh)](Dung%20Beetle/Examples/DungBeetle%20Example%2001.gh)
+- [Rhino model (.3dm)](Dung%20Beetle/Examples/DungBeetle%20Example%2001.3dm)
 
 Download both files and open them in Grasshopper and Rhino respectively to explore the workflow.
 

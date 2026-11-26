@@ -47,8 +47,8 @@ Dung Beetle 是面向 Rhino / Grasshopper 的参数化设计工具集，聚焦�
 
 **下载案例文件：**
 
-- [Grasshopper 文件（.gh）](Examples/DungBeetle%20Example%2001.gh)
-- [Rhino 模型文件（.3dm）](Examples/DungBeetle%20Example%2001.3dm)
+- [Grasshopper 文件（.gh）](Dung%20Beetle/Examples/DungBeetle%20Example%2001.gh)
+- [Rhino 模型文件（.3dm）](Dung%20Beetle/Examples/DungBeetle%20Example%2001.3dm)
 
 下载两个文件后，分别在 Grasshopper 和 Rhino 中打开，即可查看并体验案例工作流程。
 
