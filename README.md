@@ -10,6 +10,7 @@ Physics simulation · Fabrication-oriented geometry · Planar operations</p>
 <p align="center">
   <a href="https://github.com/Sucre0903/Dung-Beetle/releases"><strong>下载 / Releases</strong></a> ·
   <a href="#安装">安装</a> ·
+  <a href="#案例示例">案例示例</a> ·
   <a href="docs/Usage.zh-CN.md">详细使用手册</a> ·
   <a href="README.en.md">English</a> ·
   <a href="https://github.com/Sucre0903/Dung-Beetle/issues">问题反馈</a>
@@ -37,6 +38,19 @@ Dung Beetle 是面向 Rhino / Grasshopper 的参数化设计工具集，聚焦�
 | <img src="Dung%20Beetle/Resources/sliding_simulation_icon1.png" width="36" alt=""> **Sliding Simulation** | 模拟粒子滑行、重力、摩擦和碰撞，输出轨迹、速度及过载分析数据。 | Physics |
 | <img src="Dung%20Beetle/Resources/GH_SCurve_24x24.png" width="36" alt=""> **Curve to Biarcs** | 将自由曲线拟合为多段圆弧，优化短弧和接缝折角，辅助型材拉弯、滚圆等加工准备。 | Geometry |
 | <img src="Dung%20Beetle/Resources/Grasshopper_SurfaceUnion_Minimal2_24.png" width="36" alt=""> **Smart Planar Union** | 对同一水平面上的重叠单面 Brep 进行智能联集，输出整理后的平面区域及原始输入分组。 | Geometry |
+
+## 案例示例
+
+通过配套的 Rhino 模型与 Grasshopper 文件，快速体验 Dung Beetle 的实际工作流程。
+
+### Example 01 · 综合示例
+
+**下载案例文件：**
+
+- [Grasshopper 文件（.gh）](Examples/DungBeetle%20Example%2001.gh)
+- [Rhino 模型文件（.3dm）](Examples/DungBeetle%20Example%2001.3dm)
+
+下载两个文件后，分别在 Grasshopper 和 Rhino 中打开，即可查看并体验案例工作流程。
 
 ## 安装
 

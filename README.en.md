@@ -6,6 +6,7 @@
 <p align="center">
   <a href="https://github.com/Sucre0903/Dung-Beetle/releases">Releases</a> ·
   <a href="#installation">Installation</a> ·
+  <a href="#examples">Examples</a> ·
   <a href="#quick-start">Quick start</a> ·
   <a href="README.md">简体中文</a> ·
   <a href="https://github.com/Sucre0903/Dung-Beetle/issues">Feedback</a>
@@ -22,6 +23,19 @@ Dung Beetle brings three focused workflows into Rhino / Grasshopper: particle mo
 | <img src="Dung%20Beetle/Resources/sliding_simulation_icon1.png" width="36" alt=""> **Sliding Simulation** | Explore particle motion under gravity, friction and collisions; inspect trajectories, velocities and G-force data. | Physics |
 | <img src="Dung%20Beetle/Resources/GH_SCurve_24x24.png" width="36" alt=""> **Curve to Biarcs** | Approximate curves with circular arcs and attempt to reduce short segments and tangent discontinuities. Useful for bending and rolling workflows. | Geometry |
 | <img src="Dung%20Beetle/Resources/Grasshopper_SurfaceUnion_Minimal2_24.png" width="36" alt=""> **Smart Planar Union** | Consolidate overlapping horizontal planar Breps into planar regions, with input membership and diagnostic outputs. | Geometry |
+
+## Examples
+
+Explore Dung Beetle through the accompanying Rhino model and Grasshopper definition.
+
+### Example 01 · Feature Overview
+
+**Download the example files:**
+
+- [Grasshopper definition (.gh)](Examples/DungBeetle%20Example%2001.gh)
+- [Rhino model (.3dm)](Examples/DungBeetle%20Example%2001.3dm)
+
+Download both files and open them in Grasshopper and Rhino respectively to explore the workflow.
 
 ## Installation
 
