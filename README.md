@@ -29,7 +29,13 @@ Physics simulation · Fabrication-oriented geometry · Planar operations</p>
 
 Dung Beetle 是面向 Rhino / Grasshopper 的参数化设计工具集，聚焦物理模拟、几何优化与加工制造中的实际问题。
 
-想知道一个粒子沿滑道会如何运动？想把自由曲线变成可用于圆弧加工的分段几何？或者想将大量重叠的水平曲面合并成清晰的平面区域？Dung Beetle 将这些工作封装成独立组件，让设计、分析与几何整理在同一个 Grasshopper 工作流中完成。
+想知道一个粒子沿滑道会如何运动？想把自由曲线变成可用于圆弧加工的分段几何？想将大量重叠的水平曲面合并成清晰的平面区域？又或者，想把标准构件批量对齐到空间中形状相同、位置和朝向不同的目标轮廓？Dung Beetle 将这些工作封装成独立组件，让设计、分析与几何整理在同一个 Grasshopper 工作流中完成。
+
+## v1.1 · 空间曲线匹配
+
+**匹配形状，而不受原始空间位置和朝向的限制。** Spatial Curve Match 在两组平面曲线之间寻找公差内全等的目标，并计算旋转和平移。将输出变换应用到关联的实体、曲面或其他几何，即可辅助批量构件定位、标准构件复用和异形几何整理。支持目标唯一分配和匹配诊断；不缩放、不变形，不支持非平面曲线。
+
+[查看新组件使用说明](docs/Spatial-Curve-Match.zh-CN.md) · [下载与版本记录](https://github.com/Sucre0903/Dung-Beetle/releases)
 
 ## 组件一览
 
@@ -84,7 +90,7 @@ dotnet build ".\Dung Beetle\Dung Beetle.csproj" -c Release -f net7.0-windows
 
 当前工程引用 `System.Resources.Extensions 10.0.1`，与 .NET 7 的组合可能产生兼容性警告。请在目标 Rhino 环境实际验证后再分发，勿仅以编译成功判断兼容性。
 
-## 三个快速上手案例
+## 四个快速上手案例
 
 以下是可手动搭建的示例，不需要额外示例文件。端口以实际组件名称为准。
 
@@ -148,6 +154,23 @@ Tolerance / Run ──────────────┘                   
 > 当前实现限定同一 Z 标高的水平、单面平面 Brep；不是任意三维实体布尔联集。若输入为斜平面，请先统一转换到 World XY，再将结果变换回原平面。
 
 更完整的输入输出说明、默认值、数据树用法及排错流程，请阅读 [中文使用手册](docs/Usage.zh-CN.md)。
+
+### 04 · Spatial Curve Match — 从轮廓匹配到构件空间定位
+
+<img src="Dung%20Beetle/Resources/SpatialCurveMatch_24x24.png" width="42" alt="Spatial Curve Match">
+
+**适用场景：** 标准构件复用、异形板件定位、批量几何对齐。
+
+- 在 World XY 平面画一个不对称闭合轮廓，复制一份，旋转并平移到不同平面。
+- 原轮廓接 `S`，副本接 `T`，设置 `Tol=0.01`（示例模型单位），其余参数使用默认值。
+- 检查 `I`、`OK`、`Dev`，观察 `C` 是否与目标重合。用 `OK` 筛选对应的源几何和 `X`，再接 Grasshopper 的 Transform 组件，即可将同一刚性变换应用到关联几何。
+- 如果要跨数据树分支进行一次全局匹配，可将 `S`、`T` 同时 Flatten；`Unique=True` 时每个目标索引在当次求解中最多使用一次。
+
+画布搜索：`Spatial Curve Match` 或 `SpaceMatch`。
+
+> 输入须为平面曲线，但可以位于三维空间中的不同平面。匹配偏差是估计值；对称轮廓可能有多种有效姿态。请结合实际构件方向复核结果。
+
+[详细使用说明与验收案例](docs/Spatial-Curve-Match.zh-CN.md)
 
 ## 反馈与参与
 

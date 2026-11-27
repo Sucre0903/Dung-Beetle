@@ -16,6 +16,12 @@
 
 Dung Beetle brings four focused workflows into Rhino and Grasshopper. Simulate particle motion, approximate curves with circular arcs, unite overlapping planar surfaces, and match congruent planar curves across different positions and orientations in 3D space.
 
+## v1.1 · Spatial Curve Match
+
+**Match shapes, not positions.** Find congruent planar curves across different positions and orientations in 3D, then reuse the resulting rigid transforms to position associated geometry. Designed for component reuse, fabrication-oriented workflows and batch alignment, without scaling or deformation.
+
+[Quick start](#spatial-curve-match) · [Releases](https://github.com/Sucre0903/Dung-Beetle/releases)
+
 ## Components
 
 | Component | What it does | Category |
