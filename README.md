@@ -38,6 +38,7 @@ Dung Beetle 是面向 Rhino / Grasshopper 的参数化设计工具集，聚焦�
 | <img src="Dung%20Beetle/Resources/sliding_simulation_icon1.png" width="36" alt=""> **Sliding Simulation** | 模拟粒子滑行、重力、摩擦和碰撞，输出轨迹、速度及过载分析数据。 | Physics |
 | <img src="Dung%20Beetle/Resources/GH_SCurve_24x24.png" width="36" alt=""> **Curve to Biarcs** | 将自由曲线拟合为多段圆弧，优化短弧和接缝折角，辅助型材拉弯、滚圆等加工准备。 | Geometry |
 | <img src="Dung%20Beetle/Resources/Grasshopper_SurfaceUnion_Minimal2_24.png" width="36" alt=""> **Smart Planar Union** | 对同一水平面上的重叠单面 Brep 进行智能联集，输出整理后的平面区域及原始输入分组。 | Geometry |
+| <img src="Dung%20Beetle/Resources/SpatialCurveMatch_24x24.png" width="36" alt=""> **Spatial Curve Match** | 在三维空间中对齐全等的平面曲线，输出目标索引、刚性变换和偏差。[使用说明](docs/Spatial-Curve-Match.zh-CN.md) | Geometry |
 
 ## 案例示例
 

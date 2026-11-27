@@ -14,7 +14,7 @@
 
 ---
 
-Dung Beetle brings three focused workflows into Rhino / Grasshopper: particle motion simulation, arc-based curve approximation, and planar surface union. It is designed for designers and makers who want to explore geometry, prepare fabrication-oriented curves, and simplify overlapping regions without repeatedly assembling the underlying operations.
+Dung Beetle brings four focused workflows into Rhino and Grasshopper. Simulate particle motion, approximate curves with circular arcs, unite overlapping planar surfaces, and match congruent planar curves across different positions and orientations in 3D space.
 
 ## Components
 
@@ -23,6 +23,7 @@ Dung Beetle brings three focused workflows into Rhino / Grasshopper: particle mo
 | <img src="Dung%20Beetle/Resources/sliding_simulation_icon1.png" width="36" alt=""> **Sliding Simulation** | Explore particle motion under gravity, friction and collisions; inspect trajectories, velocities and G-force data. | Physics |
 | <img src="Dung%20Beetle/Resources/GH_SCurve_24x24.png" width="36" alt=""> **Curve to Biarcs** | Approximate curves with circular arcs and attempt to reduce short segments and tangent discontinuities. Useful for bending and rolling workflows. | Geometry |
 | <img src="Dung%20Beetle/Resources/Grasshopper_SurfaceUnion_Minimal2_24.png" width="36" alt=""> **Smart Planar Union** | Consolidate overlapping horizontal planar Breps into planar regions, with input membership and diagnostic outputs. | Geometry |
+| <img src="Dung%20Beetle/Resources/SpatialCurveMatch_24x24.png" width="36" alt=""> **Spatial Curve Match** | Align congruent planar curves in 3D and report the target index, rigid transform and estimated deviation. [Quick start](#spatial-curve-match) | Geometry |
 
 ## Examples
 
@@ -50,6 +51,13 @@ The project references a Rhino 8 Grasshopper SDK and targets `net7.0-windows`, `
 3. Open Grasshopper and select **File → Special Folders → Components Folder**.
 4. Close Rhino. Copy `Dung Beetle.gha` and any required accompanying runtime dependencies into the components folder, preserving the package layout. Keep only one compatible version of the plugin installed.
 5. Restart Rhino, open Grasshopper and look for the **Dung Beetle** tab.
+
+For the Spatial Curve Match preview package on Windows, choose the folder that matches the runtime used by Rhino. Keep the GHA and its accompanying files together.
+
+| Rhino 8 runtime | Folder inside the preview ZIP |
+| --- | --- |
+| .NET Core | `Install-Windows/net7.0-windows` |
+| .NET Framework 4.8 | `Install-Windows/net48` |
 
 If no installable release is available, build the project from source.
 
@@ -129,6 +137,31 @@ Draw three overlapping closed contours on World XY and create single-face planar
 | `Log` | Chinese diagnostic summary |
 
 Internally the algorithm extrudes, unions, extracts, joins and attempts to merge faces. `Top` and `Groups` are not guaranteed to correspond item by item. For tilted coplanar surfaces, transform them to World XY first, then transform the output back. This is not a general 3D solid union tool.
+
+### Spatial Curve Match
+
+Search for `Spatial Curve Match` or `SpaceMatch` under Dung Beetle → Geometry.
+
+Draw an asymmetric closed polyline on World XY. Make a copy, rotate the copy around the world X axis, then move it. Connect the original to `S`, the copy to `T`, and set `Tol=0.01` in model units. Check that `I=0`, `OK=True`, and the aligned curve at `C` overlaps the target.
+
+Both inputs accept planar curves, and each curve can lie in a different plane. Open curves match open curves, and closed curves match closed curves. The component finds a rotation and translation from the source pose to the target pose.
+
+| Inputs | Purpose |
+| --- | --- |
+| `S`, `T` | Source curves and candidate target curves |
+| `Tol`, `N` | Matching tolerance in model units and sample count. Defaults are the Rhino document tolerance and 96 samples. |
+| `Flip` | Try rotations based on the opposite target plane normal. Enabled by default. |
+| `Unique` | Assign each target index at most once per solve. Enabled by default. |
+
+| Outputs | Purpose |
+| --- | --- |
+| `I`, `OK` | Zero-based target index and match status. Unmatched sources return `-1` and `False`. |
+| `X`, `C` | Rigid transform and aligned copy of the source curve |
+| `Dev`, `Log` | Estimated maximum deviation in model units and diagnostic details |
+
+The match outputs follow the source list order. Filter by `OK` and use `X` with Grasshopper's **Transform** component to align geometry associated with the source curves. To search across all branches in a single solve, flatten both `S` and `T`.
+
+[Detailed usage guide in Simplified Chinese](docs/Spatial-Curve-Match.zh-CN.md)
 
 ## Notes and troubleshooting
 

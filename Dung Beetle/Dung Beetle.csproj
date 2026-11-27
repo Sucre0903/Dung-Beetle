@@ -16,7 +16,7 @@
   
   <PropertyGroup>
     <!-- Specifies information for Assembly and Yak -->
-    <Version>1.0</Version>
+    <Version>1.1.0-dev.3</Version>
     <Title>Sliding Simulation</Title>
     <Company>Sliding Simulation Authors</Company>
     <Description>Description of Sliding Simulation</Description>
