@@ -1,8 +1,7 @@
-<p align="center">
-  <img src="Dung%20Beetle/Resources/Dung_Beetle_icon2.png" width="72" alt="Dung Beetle logo">
-</p>
-<h1 align="center">Dung Beetle</h1>
-<p align="center"><strong>Practical Grasshopper tools for motion, geometry and fabrication.</strong></p>
+<h1 align="center"><img src="docs/images/brand/banner.png" width="100%" alt="Dung Beetle — Grasshopper tools for form & motion"></h1>
+
+<p align="center">Dung Beetle brings geometry processing, component alignment, and sliding simulation into Rhino and Grasshopper.</p>
+
 <p align="center">
   <a href="https://github.com/Sucre0903/Dung-Beetle/releases">Releases</a> ·
   <a href="#installation">Installation</a> ·

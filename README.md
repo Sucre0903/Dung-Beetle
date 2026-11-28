@@ -1,11 +1,6 @@
-<p align="center">
-  <img src="Dung%20Beetle/Resources/Dung_Beetle_icon2.png" width="72" alt="Dung Beetle logo">
-</p>
+<h1 align="center"><img src="docs/images/brand/banner.png" width="100%" alt="Dung Beetle · 屎壳郎｜面向形态与运动的 Grasshopper 工具"></h1>
 
-<h1 align="center">Dung Beetle · 屎壳郎</h1>
-
-<p align="center"><strong>让复杂的几何工作，变成几个简单的 Grasshopper 电池。</strong><br>
-Physics simulation · Fabrication-oriented geometry · Planar operations</p>
+<p align="center">屎壳郎是一组面向 Rhino / Grasshopper 的设计工具，用于处理几何、对齐构件和模拟滑行。</p>
 
 <p align="center">
   <a href="https://github.com/Sucre0903/Dung-Beetle/releases"><strong>下载 / Releases</strong></a> ·
